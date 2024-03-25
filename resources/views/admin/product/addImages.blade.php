@@ -34,7 +34,7 @@
     </form>
 
     <div class="row mt-5 product-images">
-      
+
     </div>
     <hr/>
     <a href="{{ route('products') }}" class="btn btn-primary float-end">Save</a>
@@ -96,7 +96,7 @@ function allDataImages(){
       removedfile: function(file)
       {
         var name = file.upload.filename;
-          
+
           $.ajax({
               headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')},
               type: 'POST',

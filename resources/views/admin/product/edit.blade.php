@@ -39,7 +39,7 @@
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control  @error('title') is-invalid @enderror" placeholder="Chicken nugget spicy" value="{{ old('title') ? old('title') : $product->title }}" required>
-            @error('title') 
+            @error('title')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
@@ -51,21 +51,21 @@
                 <option value="{{ $item->id }}" {{ $product->category->id   == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
               @endforeach
             </select>
-            @error('category') 
+            @error('category')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
           <div class="form-group">
             <label for="price">Price</label>
             <input type="number" name="price" id="price" class="form-control  @error('price') is-invalid @enderror" placeholder="1000" value="{{ $product->price }}" >
-            @error('price') 
+            @error('price')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
           <div class="form-group">
             <label for="stock">Stock</label>
             <input type="number" name="stock" id="stock" class="form-control  @error('stock') is-invalid @enderror" placeholder="10" value="{{ $product->stock }}" >
-            @error('stock') 
+            @error('stock')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
@@ -91,7 +91,7 @@
           @csrf
         </form>
         <div class="row mt-3 product-images">
-          
+
         </div>
       </div>
     </div>
@@ -122,7 +122,7 @@ function autosize(){
     text.on('input', function(){
         resize($(this));
     });
-    
+
     function resize ($text) {
         $text.css('height', 'auto');
         $text.css('height', $text[0].scrollHeight+'px');
@@ -224,7 +224,7 @@ function autosize(){
       removedfile: function(file)
       {
         var name = file.upload.filename;
-          
+
           $.ajax({
               headers: {'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')},
               type: 'POST',

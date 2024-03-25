@@ -19,7 +19,7 @@
           <div class="form-group">
             <label for="title">Title</label>
             <input type="text" name="title" id="title" class="form-control  @error('title') is-invalid @enderror" placeholder="Chicken nugget spicy" value="{{ old('title') }}" required>
-            @error('title') 
+            @error('title')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
@@ -31,21 +31,21 @@
                 <option value="{{ $item->id }}" {{ old('category') == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
               @endforeach
             </select>
-            @error('category') 
+            @error('category')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
           <div class="form-group">
             <label for="price">Price</label>
             <input type="number" name="price" id="price" class="form-control  @error('price') is-invalid @enderror" placeholder="1000" value="{{ old('price') }}" required>
-            @error('price') 
+            @error('price')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
           <div class="form-group">
             <label for="stock">Stock</label>
             <input type="number" name="stock" id="stock" class="form-control  @error('stock') is-invalid @enderror" placeholder="10" value="{{ old('stock') }}" required>
-            @error('stock') 
+            @error('stock')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>

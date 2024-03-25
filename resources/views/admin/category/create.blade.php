@@ -18,7 +18,7 @@
               @error('path')
                 <span class="text-danger">{{ $message }}</span><br>
               @enderror
-              <div id="notimage" class="hidden">Please select an image            
+              <div id="notimage" class="hidden">Please select an image
               </div>
               <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
               </div><br>
@@ -28,7 +28,7 @@
               <div id="response" class="hidden">
               <span class="text-danger" id="max-file"></span>
               <div id="messages">
-              
+
               </div>
               <progress class="progress" id="file-progress" value="0">
                 <span>0</span>%
@@ -40,7 +40,7 @@
           <div class="form-group">
             <label for="name">Category name</label>
             <input type="text" name="name" id="name" class="form-control  @error('name') is-invalid @enderror" placeholder="Chicken" value="{{old('name')}}" required autofocus>
-            @error('name') 
+            @error('name')
               <small class="text-danger">{{ $message }}</small>
             @enderror
           </div>
