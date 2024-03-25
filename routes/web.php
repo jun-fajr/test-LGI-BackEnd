@@ -92,3 +92,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/admin/order/delete/{order_code}', 'delete')->name('orderDelete');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

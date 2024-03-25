@@ -27,8 +27,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-
+        // return view('home');
         if(!Auth::user()->shop){
             return view('admin.shop.create');
         }else{
@@ -44,6 +43,5 @@ class HomeController extends Controller
 
             return view('admin.index', $data);
         }
-
     }
 }
