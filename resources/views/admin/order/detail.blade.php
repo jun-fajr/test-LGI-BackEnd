@@ -36,7 +36,8 @@
             <tr>
               <td><b>Total</b></td>
               <td>&nbsp; : &nbsp;</td>
-              <td><b><u>${{ $order->total }}</u></b></td>
+              {{-- <td><b><u>Rp {{ $order->total,2}}</u></b></td> --}}
+              <td><b><u>@currency($order->total)</u></b></td>
             </tr>
             <tr>
               <td><b>Name</b></td>
@@ -78,9 +79,11 @@
                   <tr>
                     <td>{{ $loop->iteration }}</td>
                     <td>{!! str_replace('-', ' ', ucwords($item->title)) !!}</td>
-                    <td>${{ $item->price }}</td>
+                    {{-- <td>Rp {{ $item->price }}</td> --}}
+                    <td>@currency( $item->price )</td>
                     <td>{{ $item->quantity }}</td>
-                    <td>${!! $item->price * $item->quantity !!}</td>
+                    {{-- <td>Rp {!! $item->price * $item->quantity !!}</td> --}}
+                    <td>@currency( $item->price * $item->quantity )</td>
                   </tr>
                 @endforeach
               </tbody>

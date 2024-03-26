@@ -12,9 +12,11 @@
                   </div>
                   <div class="col-md-8">
                       <h6 class="text-muted font-semibold">Sales</h6>
-                      <h6 class="font-extrabold mb-0">$
-                        {{ $sales }}
+                      <h6 class="font-extrabold mb-0">@currency( $sales )
                       </h6>
+                      {{-- <h6 class="font-extrabold mb-0">Rp
+                        {{ $sales }}
+                      </h6> --}}
                   </div>
               </div>
           </div>
@@ -94,7 +96,8 @@
                     <td>{{ $loop->iteration }}</td>
                     <td>{{ $row->order_code }}</td>
                     <td>{{ $row->name }}</td>
-                    <td>${{ $row->total }}</td>
+                    {{-- <td>Rp {{ $row->total }}</td> --}}
+                    <td>@currency( $row->total )</td>
                     <td>
                       @if($row->status == 0)
                         <span class="badge bg-warning">Unprocessed</span>

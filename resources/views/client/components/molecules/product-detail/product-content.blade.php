@@ -13,7 +13,7 @@
       }
 
       .add-to-cart, #count{
-        width:100% !important;  
+        width:100% !important;
       }
     }
 
@@ -26,7 +26,8 @@
 <div>
     <h3 class="mt-md-0 mt-4">{!! str_replace('-', ' ', ucwords($dataProductContent->title)) !!}</h3>
     <hr/>
-    <h5>${{$dataProductContent->price}}</h5>
+    {{-- <h5>Rp {{$dataProductContent->price}}</h5> --}}
+    <h5>@currency( $dataProductContent->price )</h5>
     <p>Category : <a href="{{ route('clientCategoryProducts', $dataProductContent->category->name) }}">{!! str_replace('-', ' ', ucwords($dataProductContent->category->name)) !!}</a></p>
     <p><b>Description</b></p>
     <div class="form-group">
@@ -61,7 +62,7 @@
           text.on('input', function(){
               resize($(this));
           });
-          
+
           function resize ($text) {
               $text.css('height', 'auto');
               $text.css('height', $text[0].scrollHeight+'px');
@@ -91,7 +92,7 @@
           count--;
           countEl.value = count;
           $('.add-to-cart').attr('data-quantity', count);
-        }  
+        }
       }
 
       $(".add-to-cart").click(function (e) {

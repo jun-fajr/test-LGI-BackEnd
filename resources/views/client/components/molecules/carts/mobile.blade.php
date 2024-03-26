@@ -11,11 +11,11 @@
             <div class="row">
                 <div class="col-6">
                     <label for="price">Price</label>
-                    <p id="price" class="font-bold">${{ $details['price']}}</p>
+                    <p id="price" class="font-bold">Rp {{ $details['price']}}</p>
                 </div>
                 <div class="col-6">
                     <label for="subtotal">Sub Total</label>
-                    <p class="font-bold">$<span class="product-subtotal">{{$details['price'] * $details['quantity']}}</span></p>
+                    <p class="font-bold">Rp <span class="product-subtotal">{{$details['price'] * $details['quantity']}}</span></p>
                 </div>
                 <div class="col-12">
                     <label for="quantity">Quantity : {{request()->routeIs('clientCheckout') ? 'x'.$details['quantity'] : ''}}</label>
